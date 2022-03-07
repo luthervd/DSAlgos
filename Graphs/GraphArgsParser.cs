@@ -27,8 +27,12 @@ namespace Graphs
                     }
                     else graphArgs.Edges = int.Parse(line); 
                 }
-                var args = line.Trim().Split(" ");
-                graphArgs.EdgeArgs.Add((int.Parse(args[0]), int.Parse(args[1])));
+                else
+                {
+                    var args = line.Trim().Split(" ");
+                    graphArgs.EdgeArgs.Add((int.Parse(args[0]), int.Parse(args[1])));
+                }
+               
                 index++;
             }
             return graphArgs;
