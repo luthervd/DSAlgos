@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Graphs\Graphs.csproj" />
     <ProjectReference Include="..\Trees\Trees.csproj" />
   </ItemGroup>
 

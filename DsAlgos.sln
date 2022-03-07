@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "src\Trees\Trees.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleHost", "src\ConsoleHost\ConsoleHost.csproj", "{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{31D82B9F-76EF-47A6-B4D9-366148ED6F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{31D82B9F-76EF-47A6-B4D9-366148ED6F62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs", "Graphs\Graphs.csproj", "{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +29,13 @@ Global
 		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5404DF28-BD16-4EB0-BAC5-72E041ACF364} = {1B82CF55-C3FD-4D44-81AB-DF0846F57842}
-		{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C} = {1B82CF55-C3FD-4D44-81AB-DF0846F57842}
-		{31D82B9F-76EF-47A6-B4D9-366148ED6F62} = {1B82CF55-C3FD-4D44-81AB-DF0846F57842}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99CB0D49-8F05-48B9-95B7-5D596ED9539F}
