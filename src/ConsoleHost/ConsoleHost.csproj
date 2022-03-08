@@ -17,4 +17,13 @@
     <ProjectReference Include="..\Trees\Trees.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\TinyConnected.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\TinyNotConnected.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

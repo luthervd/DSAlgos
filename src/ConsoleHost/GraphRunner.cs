@@ -14,7 +14,7 @@ namespace ConsoleHost
 
         internal void Run()
         {
-            var filesToCheck = Directory.GetFiles(@"C:\Src\DSAlgos\Data");
+            var filesToCheck = Directory.GetFiles(@".\Data");
             foreach(var file in filesToCheck)
             {
                 Console.WriteLine($"Checking for file {file}");
@@ -28,8 +28,10 @@ namespace ConsoleHost
                     Console.WriteLine($"Starting DFS with {arg}");
                     dfs.Reset();
                     dfs.Search(arg);
-                    Console.WriteLine();
-                    Console.WriteLine($"Starting Path search with {arg}");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+
+                    Console.WriteLine($"Starting Depth FIrst Path search with {arg}");
                     var pathSearch = new DepthFirstPaths(graph, arg);
                     pathSearch.Search(arg);
                     for (int v = 0; v < graph.Vertices; v++)
@@ -38,6 +40,25 @@ namespace ConsoleHost
                         if (pathSearch.HasPathTo(v))
                         {
                             foreach (var x in pathSearch.PathTo(v))
+                            {
+                                if (x == arg) Console.Write(x);
+                                else Console.Write("-" + x);
+                            }
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    
+                    Console.WriteLine($"Starting Breadth first search with {arg}");
+                    var bfs = new BreadthFirstSearch(graph);
+                    bfs.Search(arg);
+                    for (int v = 0; v < graph.Vertices; v++)
+                    {
+                        Console.Write(arg + " to " + v + ": ");
+                        if (bfs.HasPathTo(v))
+                        {
+                            foreach (var x in bfs.PathTo(v))
                             {
                                 if (x == arg) Console.Write(x);
                                 else Console.Write("-" + x);
