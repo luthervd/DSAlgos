@@ -13,6 +13,7 @@ namespace Graphs
 
         public DepthFirstPaths(Graph g, int source) : base(g)
         {
+            _edgeTo = new int[g.Vertices];
             _source = source;
         }
 
@@ -23,8 +24,11 @@ namespace Graphs
                 _marked[v] = true;
                 foreach(var w in _g.Adjacent(v))
                 {
-                    _edgeTo[w] = v;
-                    Search(w);
+                    if (!_marked[w])
+                    {
+                        _edgeTo[w] = v;
+                        Search(w);
+                    }
                 }
             }
                 

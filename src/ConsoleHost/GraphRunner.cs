@@ -22,15 +22,33 @@ namespace ConsoleHost
                 var args = graphArgsParser.ReadFromFile(file);
                 var graph = new Graph(args);
                 var dfs = new DepthFirstSearch(graph);
+                
                 foreach(var arg in new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 })
                 {
                     Console.WriteLine($"Starting DFS with {arg}");
                     dfs.Reset();
-                    dfs.DFS(arg);
+                    dfs.Search(arg);
+                    Console.WriteLine();
+                    Console.WriteLine($"Starting Path search with {arg}");
+                    var pathSearch = new DepthFirstPaths(graph, arg);
+                    pathSearch.Search(arg);
+                    for (int v = 0; v < graph.Vertices; v++)
+                    {
+                        Console.Write(arg + " to " + v + ": ");
+                        if (pathSearch.HasPathTo(v))
+                        {
+                            foreach (var x in pathSearch.PathTo(v))
+                            {
+                                if (x == arg) Console.Write(x);
+                                else Console.Write("-" + x);
+                            }
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
                 }
-                
             }
-           
         }
     }
 }
