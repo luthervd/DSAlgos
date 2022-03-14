@@ -1,8 +1,7 @@
 {
   "profiles": {
     "ConsoleHost": {
-      "commandName": "Project",
-      "commandLineArgs": "g"
+      "commandName": "Project"
     }
   }
 }

@@ -2,7 +2,8 @@
 
 if(args.Length == 0)
 {
-   Console.WriteLine("Arg required");
+    args = new string[1];
+    args[0] = "sort";
 }
 switch (args[0])
 {
@@ -13,9 +14,12 @@ switch (args[0])
         break;
     case "g":
     case "graph":
-    default:
         var graphRunner = new GraphRunner();
         graphRunner.Run();
+        break;
+    default:
+        var sortRunner = new SortRunner();
+        sortRunner.Run();
         break;
 }
 

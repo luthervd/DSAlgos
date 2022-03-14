@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphs", "Graphs\Graphs.csproj", "{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{BBBB5BC3-FB80-4F67-9574-7FFD45069214}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBB5BC3-FB80-4F67-9574-7FFD45069214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBBB5BC3-FB80-4F67-9574-7FFD45069214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBB5BC3-FB80-4F67-9574-7FFD45069214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBBB5BC3-FB80-4F67-9574-7FFD45069214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
