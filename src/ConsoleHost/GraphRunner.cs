@@ -23,7 +23,7 @@ namespace ConsoleHost
                 var graph = new Graph(args);
                 var dfs = new DepthFirstSearch(graph);
                 
-                foreach(var arg in new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 })
+                foreach(var arg in new List<int> {0})
                 {
                     Console.WriteLine($"Starting DFS with {arg}");
                     dfs.Reset();
@@ -69,6 +69,15 @@ namespace ConsoleHost
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
                 }
+
+                var connectedSearch = new ConnectedComponentDFS(graph);
+                var result = connectedSearch.Run();
+                Console.WriteLine($"There are {result.Count} groups");
+                foreach(var group in result)
+                {
+                    Console.WriteLine(string.Join(",", group));
+                }
+                Console.ReadKey();
             }
         }
     }

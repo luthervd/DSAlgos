@@ -13,6 +13,7 @@
         {
             _marked = new bool[g.Vertices];
             _g = g;
+            _count = 0;
         }
 
         public abstract void Search(int s);
