@@ -1,6 +1,6 @@
 ﻿namespace Sorting
 {
-    public static class SortActors
+    public static class TopDownMergeSort
     {
         public static IEnumerable<T> MergeSort<T>(this IEnumerable<T> items) where T : IComparable<T>
         {
