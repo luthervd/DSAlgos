@@ -13,9 +13,9 @@ namespace ConsoleHost
         }
 
         internal void Run()
-        {
+        { 
             var filesToCheck = Directory.GetFiles(@".\Data");
-            foreach(var file in filesToCheck)
+            foreach(var file in filesToCheck.Where(x => !x.Contains("tinyDg")))
             {
                 Console.WriteLine($"Checking for file {file}");
                 var graphArgsParser = new GraphArgsParser();
@@ -78,6 +78,18 @@ namespace ConsoleHost
                     Console.WriteLine(string.Join(",", group));
                 }
                 Console.ReadKey();
+               
+            }
+            var diGrphArgs = filesToCheck.Where(x => x.Contains("DG"));
+            Console.WriteLine("#######DiGraphs###########");
+            Console.ReadKey();
+            foreach(var arg in diGrphArgs)
+            {
+                var graphArgsParser = new GraphArgsParser();
+                var args = graphArgsParser.ReadFromFile(arg);
+                var diGraph = new DiGraph(args);
+                Console.WriteLine("Digraph content is");
+                Console.WriteLine(diGraph.ToString());  
             }
         }
     }
