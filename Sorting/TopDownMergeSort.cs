@@ -1,6 +1,6 @@
 ﻿namespace Sorting
 {
-    public static class SortActors
+    public  static partial class SortExtenstions
     {
         public static IEnumerable<T> MergeSort<T>(this IEnumerable<T> items) where T : IComparable<T>
         {
@@ -17,7 +17,7 @@
             int mid = lo + (hi - lo) / 2;
             SortInternal(toSort, lo, mid, aux); 
             SortInternal(toSort, mid + 1, hi, aux);
-            Merge(toSort, lo, mid, hi, aux);
+            Merge(toSort ?? new List<T>(), lo, mid, hi, aux);
         }
 
         private static void Merge<T>(IList<T> toMerge, int lo, int mid, int hi, T[] aux)
@@ -41,7 +41,7 @@
                 {
                     var left = aux[j] as IComparable<T>;
                     var right = aux[i];
-                    if (left.CompareTo(right) < 0)
+                    if (left?.CompareTo(right) < 0)
                     {
                         toMerge[k] = aux[j++];
                     }
