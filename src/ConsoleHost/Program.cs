@@ -6,8 +6,10 @@
 //treeRunner.Run();
 //var graphRunner = new GraphRunner();
 //graphRunner.Run();
-var wgr = new WeightedGraphRunner();
-wgr.Run();
+var pqRunner = new PriorityQueueRunner();
+pqRunner.Run();
+//var wgr = new WeightedGraphRunner();
+//wgr.Run();
 
 Console.WriteLine("Press any key to exit");
 Console.ReadKey();

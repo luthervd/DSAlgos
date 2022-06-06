@@ -44,19 +44,19 @@ namespace Graphs.Trees
             marked[v] = true;
             foreach(var edge in _graph.Adj(v))
             {
-                var w = edge.Other(v);
-                if(marked[w])
-                {
-                    continue;
-                }
-                if(edge.Weight < distTo[w])
-                {
-                    edgeTo[w] = edge;
-                    distTo[w] = edge.Weight;
-                    if(pq.)
-                }
+                //var w = edge.Other(v);
+                //if(marked[w])
+                //{
+                //    continue;
+                //}
+                //if(edge.Weight < distTo[w])
+                //{
+                //    edgeTo[w] = edge;
+                //    distTo[w] = edge.Weight;
+                //    if(pq.)
+                //}
             }
-        })
+        }
 
     }
 }
