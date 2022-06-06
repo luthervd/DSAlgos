@@ -17,7 +17,6 @@ namespace Graphs
             _count = 0;
         }
 
-        
         public DiGraph(GraphArgs args) : this(args.Vertices)
         {
             foreach(var input in args.EdgeArgs)
