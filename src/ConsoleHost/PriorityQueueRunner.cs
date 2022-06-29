@@ -30,5 +30,9 @@ public class PriorityQueueRunner
             var highest = minPq.Dequeue();
             Console.WriteLine($"Max item is {highest}");
         }
+
+        Console.WriteLine("Index queue");
+
+
     }
 }
