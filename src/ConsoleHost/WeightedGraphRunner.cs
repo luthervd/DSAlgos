@@ -27,6 +27,14 @@ public class WeightedGraphRunner
                 Console.WriteLine($"{edge.Either()}-{edge.Other(edge.Either())} {edge.Weight}");
             }
             Console.WriteLine(prim.Weight);
+
+            Console.WriteLine("Krukal :");
+            var kruakal = new KrukalsMST(weightedEdgeGraph);
+            foreach (var edge in kruakal.Edges)
+            {
+                Console.WriteLine($"{edge.Either()}-{edge.Other(edge.Either())} {edge.Weight}");
+            }
+            Console.WriteLine(kruakal.Weight);
         }
     }
 }
