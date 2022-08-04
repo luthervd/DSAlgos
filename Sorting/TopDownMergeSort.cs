@@ -2,13 +2,19 @@
 {
     public  static partial class SortExtenstions
     {
-        public static IEnumerable<T> MergeSort<T>(this IEnumerable<T> items) where T : IComparable<T>
+        public static IEnumerable<T> MergeSortCopy<T>(this IEnumerable<T> items) where T : IComparable<T>
         {
             if (items == null) return new List<T>();
             var aux = new T[items.Count()];
             var asList = items.ToList();
             SortInternal(asList, 0, items.Count() - 1, aux);
             return asList;
+        }
+
+        public static void MergeSort<T>(this IList<T> items) where T : IComparable<T>
+        {
+            var aux = new T[items.Count()];
+            SortInternal(items, 0, items.Count() - 1, aux);
         }
 
         private static void SortInternal<T>(IList<T>? toSort, int lo, int hi, T[] aux)

@@ -8,7 +8,7 @@ namespace Sorting
 {
     public static class InsertionSort
     {
-        public static IEnumerable<T> InsertSort<T>(this IEnumerable<T> target) where T : IComparable<T>
+        public static IEnumerable<T> CopyInsertSort<T>(this IEnumerable<T> target) where T : IComparable<T>
         {
             var workable = target.ToArray();
             for(var i = 0; i < workable.Count(); i++)
@@ -24,6 +24,23 @@ namespace Sorting
                 }
             }
             return workable;
+        }
+
+        public static void InsertSort<T>(this IList<T> target) where T : IComparable<T>
+        {
+            
+            for (var i = 0; i < target.Count(); i++)
+            {
+                for (var j = 0; j < i; j++)
+                {
+                    if (target[j].CompareTo(target[i]) > 0)
+                    {
+                        var moveUp = target[j];
+                        target[j] = target[i];
+                        target[i] = moveUp;
+                    }
+                }
+            }
         }
     }
 }

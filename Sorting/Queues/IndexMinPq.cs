@@ -22,7 +22,6 @@ namespace Sorting.Queues
             _size = size;
         }
 
-        //TODO
         public int DelMin()
         {
             if (N == 0) throw new ArgumentOutOfRangeException("PQueue underflow");

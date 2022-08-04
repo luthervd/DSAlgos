@@ -2,7 +2,7 @@
 
 namespace ConsoleHost;
 
-public class WeightedGraphRunner
+public class MSTRunner
 {
     public void Run()
     {
