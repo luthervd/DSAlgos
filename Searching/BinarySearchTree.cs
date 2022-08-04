@@ -1,4 +1,4 @@
-﻿namespace Trees
+﻿namespace Searching
 {
     public class BinarySearchTree<TKey, TValue> : Tree<TKey, TValue> where TKey : IComparable<TKey>
     {

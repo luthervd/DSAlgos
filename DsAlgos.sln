@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "src\Trees\Trees.csproj", "{5404DF28-BD16-4EB0-BAC5-72E041ACF364}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleHost", "src\ConsoleHost\ConsoleHost.csproj", "{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{31D82B9F-76EF-47A6-B4D9-366148ED6F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleHost", "ConsoleHost\ConsoleHost.csproj", "{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphs", "Graphs\Graphs.csproj", "{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Sorting\Sorting.csproj", "{BBBB5BC3-FB80-4F67-9574-7FFD45069214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching", "Searching\Searching.csproj", "{8E4C3A84-F0D8-495A-8D13-5E485E74C000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Searching", "Searching\Searching.csproj", "{8E4C3A84-F0D8-495A-8D13-5E485E74C000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5404DF28-BD16-4EB0-BAC5-72E041ACF364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5404DF28-BD16-4EB0-BAC5-72E041ACF364}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5404DF28-BD16-4EB0-BAC5-72E041ACF364}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5404DF28-BD16-4EB0-BAC5-72E041ACF364}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FCD2EE4-9FA7-46BC-B9BD-912560C9FE2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31D82B9F-76EF-47A6-B4D9-366148ED6F62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC5FA38-7FE6-4D3E-BFB2-68DA8252DD52}.Release|Any CPU.ActiveCfg = Release|Any CPU

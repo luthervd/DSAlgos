@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trees
+namespace Searching
 {
     public abstract class Tree<TKey, TValue>
     {
