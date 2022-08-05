@@ -1,6 +1,6 @@
 ﻿using Searching;
 
-namespace Graphs.Trees
+namespace Graphs
 {
     public class KrukalsMST
     {
@@ -19,12 +19,12 @@ namespace Graphs.Trees
 
         private IEnumerable<WeightedEdge> Fill()
         {
-           if(!_built)
-           {
-                var pq = new PriorityQueue<WeightedEdge, double>(_graph.Edges().Select(x => (x,x.Weight)));
+            if (!_built)
+            {
+                var pq = new PriorityQueue<WeightedEdge, double>(_graph.Edges().Select(x => (x, x.Weight)));
                 var uf = new UnionFind(_graph.V);
 
-                while(pq.Count != 0 && _edges.Count < _graph.V -1)
+                while (pq.Count != 0 && _edges.Count < _graph.V - 1)
                 {
                     var edge = pq.Dequeue();
                     int v = edge.Either(), w = edge.Other(v);
@@ -32,11 +32,11 @@ namespace Graphs.Trees
                     uf.Union(v, w);
                     _edges.Enqueue(edge);
                 }
-              _built = true;
-           }
+                _built = true;
+            }
             return _edges;
         }
 
-        
+
     }
 }

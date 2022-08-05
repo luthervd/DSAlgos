@@ -1,6 +1,6 @@
 ﻿using Sorting.Queues;
 
-namespace Graphs.Trees
+namespace Graphs
 {
     public class DijkstraSP
     {
@@ -29,7 +29,7 @@ namespace Graphs.Trees
         {
             _distTo[s] = 0.0;
             _pq.Insert(s, 0.0);
-            while(!_pq.IsEmpty())
+            while (!_pq.IsEmpty())
             {
                 Relax(g, _pq.DelMin());
             }
@@ -37,7 +37,7 @@ namespace Graphs.Trees
 
         private void Relax(EdgeWeightedDiGraph g, int v)
         {
-            foreach(var e in g.Adj(v))
+            foreach (var e in g.Adj(v))
             {
                 int w = e.To;
                 if (_distTo[w] > _distTo[v] + e.Weight)
@@ -69,7 +69,7 @@ namespace Graphs.Trees
             else
             {
                 var result = new Stack<DirectedWeightedEdge>();
-                for(var edge = _edgeTo[v]; edge != null; edge = _edgeTo[edge.From])
+                for (var edge = _edgeTo[v]; edge != null; edge = _edgeTo[edge.From])
                 {
                     result.Push(edge);
                 }

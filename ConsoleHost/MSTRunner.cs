@@ -1,4 +1,4 @@
-﻿using Graphs.Trees;
+﻿using Graphs;
 
 namespace ConsoleHost;
 

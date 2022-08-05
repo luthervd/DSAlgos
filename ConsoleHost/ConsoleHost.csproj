@@ -13,8 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Graphs\Graphs.csproj" />
-    <ProjectReference Include="..\..\Sorting\Sorting.csproj" />
+    <ProjectReference Include="..\Graphs\Graphs.csproj" />
+    <ProjectReference Include="..\Searching\Searching.csproj" />
+    <ProjectReference Include="..\Sorting\Sorting.csproj" />
   </ItemGroup>
 
   <ItemGroup>

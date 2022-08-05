@@ -1,4 +1,4 @@
-﻿namespace Graphs.Trees;
+﻿namespace Graphs;
 
 public class WeightedGraphArgsParser
 {
@@ -12,19 +12,19 @@ public class WeightedGraphArgsParser
         var graphArgs = new WeightedGraphArgs();
         foreach (var line in File.ReadLines(path))
         {
-            
-            if(index == 0)
+
+            if (index == 0)
             {
                 var topArgs = line.Split(' ');
                 graphArgs.Vertices = int.Parse(topArgs[0]);
-                graphArgs.Edges = int.Parse(topArgs[1]); 
+                graphArgs.Edges = int.Parse(topArgs[1]);
             }
             else
             {
                 var args = line.Trim().Split(" ");
                 graphArgs.EdgeArgs.Add((int.Parse(args[0]), int.Parse(args[1]), double.Parse(args[2])));
             }
-           
+
             index++;
         }
         return graphArgs;

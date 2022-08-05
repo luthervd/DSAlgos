@@ -1,4 +1,4 @@
-﻿namespace Graphs.Trees;
+﻿namespace Graphs;
 
 public abstract class MSTree
 {

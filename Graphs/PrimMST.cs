@@ -1,6 +1,6 @@
 ﻿using Sorting.Queues;
 
-namespace Graphs.Trees
+namespace Graphs
 {
     public class PrimMST
     {
@@ -17,7 +17,7 @@ namespace Graphs.Trees
             _distTo = new double[graph.V];
             _marked = new bool[graph.V];
             _pq = new IndexMinPq<double>(graph.V);
-            for(var i =0; i < _distTo.Length; i++)
+            for (var i = 0; i < _distTo.Length; i++)
             {
                 _distTo[i] = double.PositiveInfinity;
             }
@@ -38,7 +38,7 @@ namespace Graphs.Trees
         private void Visit(int v)
         {
             _marked[v] = true;
-            foreach(var edge in _graph.Adj(v))
+            foreach (var edge in _graph.Adj(v))
             {
                 var w = edge.Other(v);
                 if (_marked[w])

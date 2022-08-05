@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graphs.Trees
+namespace Graphs
 {
     public class WeightedDirectedGraphArgs
     {

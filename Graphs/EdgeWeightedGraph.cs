@@ -1,4 +1,4 @@
-﻿namespace Graphs.Trees;
+﻿namespace Graphs;
 
 public class EdgeWeightedGraph
 {
@@ -11,7 +11,7 @@ public class EdgeWeightedGraph
         V = v;
         _edges = new List<WeightedEdge>();
         _adjacent = new LinkedList<WeightedEdge>[v];
-        for(var i = 0 ; i < v; i++)
+        for (var i = 0; i < v; i++)
         {
             _adjacent[i] = new LinkedList<WeightedEdge>();
         }
@@ -19,7 +19,7 @@ public class EdgeWeightedGraph
 
     public EdgeWeightedGraph(WeightedGraphArgs args) : this(args.Vertices)
     {
-        foreach(var edge in args.EdgeItems)
+        foreach (var edge in args.EdgeItems)
         {
             AddEdge(edge);
         }
@@ -40,7 +40,7 @@ public class EdgeWeightedGraph
     }
     public IEnumerable<WeightedEdge> Adj(int v)
     {
-        if(v > _adjacent.Length - 1)
+        if (v > _adjacent.Length - 1)
         {
             throw new ArgumentOutOfRangeException("Arg higher than number of vertices");
         }
