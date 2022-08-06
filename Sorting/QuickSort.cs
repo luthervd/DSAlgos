@@ -1,4 +1,7 @@
-﻿namespace Sorting
+﻿using System;
+using System.Security.AccessControl;
+
+namespace Sorting
 {
     public static class QuickSortDef
     {
@@ -7,53 +10,48 @@
            Sort(target, 0, target.Count - 1);
         }
 
-        public static void QuickSort<T>(this IList<T> target, Action<IList<T>> onChange) where T : IComparable<T>
+        public static void QuickSort<T>(this IList<T> target, Action<IList<T>>? onChange = null) where T : IComparable<T>
         {
             Sort(target, 0, target.Count - 1, onChange);
         }
 
-        private static void Sort<T>(IList<T> target, int low, int high, Action<IList<T>> onChange = null) where T : IComparable<T>
+        private static void Sort<T>(IList<T> target, int left, int right, Action<IList<T>>? onChange = null) where T : IComparable<T>
         {
-            if (high <= low) return;
-            var k = Partition(target, low, high, onChange);
-            Sort(target, low, k - 1, onChange);
-            Sort(target, k + 1, high, onChange);
-        
-        }
-        private static int Partition<T>(IList<T> target, int low, int high, Action<IList<T>> onChange = null) where T : IComparable<T>
-        {
-            int i = low, j = high + 1;
-            var pivot = target[low];
-            while(true)
+            do
             {
-                while (target[++i].CompareTo(pivot) < 0)
+                int i = left;
+                int j = right;
+                var pivot = target[i + ((j - i)/2)];
+                do
                 {
-                    if (i == high) break;
-                }
-                while (pivot.CompareTo(target[--j]) < 0)
+                    while (i < target.Count && pivot.CompareTo(target[i]) > 0) i++;
+                    while (j > 0 && pivot.CompareTo(target[j]) < 0) j--;
+                    if (i > j) break;
+                    if(i < j)
+                    {
+                        var temp = target[i];
+                        target[i] = target[j];
+                        target[j] = temp;
+                        if (onChange != null)
+                        {
+                            onChange.Invoke(target);
+                        }
+                    }
+                    i++;
+                    j--;
+                } while (i <= j);
+                if(j - left <= right - i)
                 {
-                    if (j == low) break;
+                    if (left < j) Sort(target, left, j, onChange);
+                    left = i;
                 }
-                if (i >= j) break;
-                Swap(target, i, j, onChange);
-            }
-            Swap(target,low, j, onChange);
-            return j;
-        }
-
-        private static void Swap<T>(IList<T> target, int left, int right, Action<IList<T>> onChange = null)
-        {
-            var original = target[left];
-            target[left] = target[right];
-            if(onChange != null)
-            {
-                onChange.Invoke(target);
-            }
-            target[right] = original;
-            if (onChange != null)
-            {
-                onChange.Invoke(target);
-            }
+                else
+                {
+                    if(i < right) Sort(target, i, right, onChange);
+                    right = j;
+                }
+            } while (left < right);
+            
         }
     }
 }
