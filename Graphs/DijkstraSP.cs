@@ -10,11 +10,11 @@ namespace Graphs
 
         private DijkstraSP(EdgeWeightedDiGraph g)
         {
-            _edgeTo = new DirectedWeightedEdge[g.V];
-            _distTo = new double[g.V];
-            _pq = new IndexMinPq<double>(g.V);
+            _edgeTo = new DirectedWeightedEdge[g.Vertices];
+            _distTo = new double[g.Vertices];
+            _pq = new IndexMinPq<double>(g.Vertices);
 
-            for (int v = 0; v < g.V; v++)
+            for (int v = 0; v < g.Vertices; v++)
                 _distTo[v] = double.PositiveInfinity;
         }
 
@@ -37,7 +37,7 @@ namespace Graphs
 
         private void Relax(EdgeWeightedDiGraph g, int v)
         {
-            foreach (var e in g.Adj(v))
+            foreach (var e in g.Adjacent(v))
             {
                 int w = e.To;
                 if (_distTo[w] > _distTo[v] + e.Weight)

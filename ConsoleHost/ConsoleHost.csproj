@@ -31,6 +31,9 @@
     <None Update="Data\WeightedGraphs\TinyEWD.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\WeightedGraphs\tinyEWDAG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\WeightedGraphs\TinyEWG.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

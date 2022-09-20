@@ -1,8 +1,8 @@
 ﻿namespace Graphs
 {
-    public class SymbolGraph
+    public static class SymbolGraphReader
     {
-        public SymbolGraphReadResult Read(string filePath, string seperator)
+        public static SymbolGraph Read(string filePath, string seperator)
         {
             var symbols = new Dictionary<string, int>();
             var lines = File.ReadAllLines(filePath);
@@ -33,7 +33,7 @@
                 }
             }
 
-            return new SymbolGraphReadResult(symbols,keys,graph);
+            return new SymbolGraph(symbols,keys,graph);
         }
     }
 }

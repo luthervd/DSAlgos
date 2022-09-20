@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Graphs
 {
-    public class SymbolGraphReadResult
+    public class SymbolGraph
     {
         private readonly Dictionary<string, int> _symbols;
         private readonly string[] _keys;
 
 
-        public SymbolGraphReadResult(Dictionary<string, int> symbols, string[] keys, Graph graph)
+        public SymbolGraph(Dictionary<string, int> symbols, string[] keys, Graph graph)
         {
             _symbols = symbols;
             _keys = keys;

@@ -1,53 +1,52 @@
-﻿namespace Graphs
+﻿namespace Graphs;
+
+public class EdgeWeightedDiGraph
 {
-    public class EdgeWeightedDiGraph
+    private LinkedList<DirectedWeightedEdge>[] _adjacent;
+
+    public EdgeWeightedDiGraph(int v)
     {
-        private LinkedList<DirectedWeightedEdge>[] _adjacent;
-
-        public EdgeWeightedDiGraph(int v)
+        Vertices = v;
+        _adjacent = new LinkedList<DirectedWeightedEdge>[v];
+        for (var i = 0; i < v; i++)
         {
-            V = v;
-            _adjacent = new LinkedList<DirectedWeightedEdge>[v];
-            for (var i = 0; i < v; i++)
-            {
-                _adjacent[i] = new LinkedList<DirectedWeightedEdge>();
-            }
+            _adjacent[i] = new LinkedList<DirectedWeightedEdge>();
         }
+    }
 
-        public EdgeWeightedDiGraph(WeightedDirectedGraphArgs args) : this(args.Vertices)
+    public EdgeWeightedDiGraph(WeightedDirectedGraphArgs args) : this(args.Vertices)
+    {
+        foreach (var edge in args.EdgeItems)
         {
-            foreach (var edge in args.EdgeItems)
-            {
-                AddEdge(edge);
-            }
+            AddEdge(edge);
         }
+    }
 
-        public int V { get; }
+    public int Vertices { get; }
 
-        public int E { get; private set; }
+    public int Edges { get; private set; }
 
-        public void AddEdge(DirectedWeightedEdge edge)
+    public void AddEdge(DirectedWeightedEdge edge)
+    {
+        _adjacent[edge.From].AddLast(edge);
+        Edges++;
+    }
+    public IEnumerable<DirectedWeightedEdge> Adjacent(int v)
+    {
+        if (v > _adjacent.Length - 1)
         {
-            _adjacent[edge.From].AddLast(edge);
-            E++;
+            throw new ArgumentOutOfRangeException("Arg higher than number of vertices");
         }
-        public IEnumerable<DirectedWeightedEdge> Adj(int v)
-        {
-            if (v > _adjacent.Length - 1)
-            {
-                throw new ArgumentOutOfRangeException("Arg higher than number of vertices");
-            }
-            return _adjacent[v];
-        }
+        return _adjacent[v];
+    }
 
-        public IEnumerable<DirectedWeightedEdge> Edges()
-        {
-            return _adjacent.SelectMany(x => x);
-        }
+    public IEnumerable<DirectedWeightedEdge> GetEdges()
+    {
+        return _adjacent.SelectMany(x => x);
+    }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }

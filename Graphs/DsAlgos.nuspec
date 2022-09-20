@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DsAlgos</id>
+    <version>1.0.0</version>
+    <title>DsAlgos</title>
+    <authors>Luke McGuinness</authors>
+    <owners>Luke McGuinness</owners>
+    <description>Basic Algorithms</description>
+    <dependencies>
+      <group targetFramework="net6.0" />
+    </dependencies>
+  </metadata>
+   <files>
+     <file src="bin\Release\net6.0\*.dll" target="lib\net6.0" />
+  </files>
+</package>
